@@ -1,0 +1,43 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="Practice Files"/>
+		<link rel="stylesheet" type="text/css" href="/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/variables.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cardgame.css">
+	</head>
+
+	<body>
+		<main>
+			<section class="container">
+				<h1>Cute Mini Blackjack Game</h1>
+				<p id="message-el">Let's Play! Click Start Game</p>
+				<div class="cardgame__group">
+					<div class="cardgame__group--card-adjustment"><p id="card-el"></p><p id="card-draw">Cards Drawn</p></div>
+					<div class="cardgame__group--seperate">
+						<p id="games-won"></p>
+						<p id="sum-el"></p>
+						<p id="player-el"></p>
+					</div>
+				</div>
+				<div class="cardgame__btngroup">
+					<button id="start-button" onclick="startGame()">Start Game</button>
+					<button onclick="newCard()">New Card</button>
+				</div>
+				<div class="gameplay">
+					<p>Welcome to "Cute Mini Blackjack Game"! This game is simply for entertainment purposes only, in no way does this game deal or grant real money!</p> 
+
+					<p><strong>How to play:</strong> The goal is to get the "<strong>Total Sum</strong>" value to 21 without going over. If you go over 21 you loose and have to start over by clicking on start game. At the start of the game, you are dealt with 2 cards drawn ranging from 1 to 13 points. Each card has a value: numbered cards (2 through 10) are worth their face value, face cards (Jack, Queen, King) are worth 10, and an Ace is worth 1 point in this game. </p>
+
+					<p>Every time you loose, 5 chips will be taken from you but if you get Blackjack you gain 10 more chips instead. Once you reach zero in chips you can no longer play and will have to start over by refreshing browser. If you do get <strong>Blackjack</strong> just click "<strong>New Card</strong>" to continue game.</p>
+				</div>
+				
+			</section>
+			<div class="card-img">
+				<img src="/imgs/cute-blackjack-card-and-chips.webp" alt="Cute blackjack card illustration with chips">
+			</div>
+		</main>
+    <script src="/js/cardgame.js"></script>
+  </body>
+</html>
