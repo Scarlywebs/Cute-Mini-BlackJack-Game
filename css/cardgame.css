@@ -15,7 +15,7 @@ body{
   max-width: 725px;
 }
 h1, button, #message-el, #card-el, #sum-el, #player-el,
-#card-draw{
+#card-draw, #games-won{
   font-family: var(--font-family-PoetsenOne);
 }
 h1{
@@ -88,7 +88,7 @@ button:hover{
 .gameplay p{
   margin-bottom: 2rem;
 }
-.card-style, .sum-style, .chip-style{
+.card-style, .sum-style, .chip-style, .won-style{
   display: flex;
   font-size: var(--font-size-70px);
   color: var(--dark-pink);

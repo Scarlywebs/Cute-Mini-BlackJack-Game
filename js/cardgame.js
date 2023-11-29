@@ -52,7 +52,7 @@ function getplayerChips() {
 }
 
 function renderGame(){
-  if ( sum <= 21){
+  if ( sum <= 18){
     message = "Close, let's draw a new card!"
   } else if ( sum === 21){
     message = "You got Blackjack!"
