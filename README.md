@@ -6,4 +6,4 @@ In this game, players draw cards with the aim of getting as close to 21 as possi
 
 Feel free to explore the code, suggest improvements, or fork the repository to create your own version of the game. Happy gaming!
 
-![Cute mini game preview](imgs/preview-of-game.jpg)
+![Cute mini game preview](imgs/preview.jpg)
