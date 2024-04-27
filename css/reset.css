@@ -16,6 +16,7 @@ body{
 }
 div, section, main,
 header, footer{
+  display: flex;
   width:100%;
   height: auto;
 }

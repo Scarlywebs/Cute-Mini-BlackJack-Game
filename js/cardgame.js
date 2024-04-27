@@ -10,10 +10,11 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardEl = document.getElementById("card-el")
 let playerEl = document.getElementById("player-el")
-let lostGame = document.getElementById('start-button')
-let hideDraw = document.getElementById('card-draw')
+let startButton = document.getElementById('start-button')
+startButton.onclick = startGame
+let newCardBTN = document.getElementById('new-card')
+newCardBTN.onclick = newCard
 let gamesTotal = document.getElementById('games-won')
-
 
 function getRandomCard(){
   let randomNumber = Math.floor( Math.random() * 13 ) + 1
@@ -33,8 +34,7 @@ function startGame() {
       cards = [firstCard, secondCard];
       sum = firstCard + secondCard;
       isAlive = true;
-      lostGame.textContent = 'New Game';
-      hideDraw.style.display = 'block';
+      startButton.textContent = 'New Game';
       renderGame();
   }
 }
@@ -61,7 +61,7 @@ function renderGame(){
     gamesWon += 1
     getplayerChips();
   } else {
-    message = "Oh no, you lost this game!"
+    message = "Oh no, you lost this round! Click 'New Game' to play again!"
     hasBlackJack = false
     isAlive = false    
     getplayerChips();
@@ -72,12 +72,11 @@ function renderGame(){
 
   messageEl.textContent = message
 
-  cardEl.textContent = ""
   for (let i = 0; i < cards.length; i++) {    
-    let cardDiv = document.createElement('div');
-    cardDiv.textContent = cards[i] + "-";
-    cardDiv.classList.add('card-style');
-    cardEl.appendChild(cardDiv);
+    let cardNum = document.getElementById('card-number');
+    cardNum.textContent = cards[i] + "-";
+    cardNum.classList.add('card-style');
+    cardEl.textContent = "Cards Drawn";
   }  
 
   let sumSpan = document.createElement('span');

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+@font-face {
+  font-family: PoetsenOne;
+  src: url(/fonts/PoetsenOne-Regular.woff2) format('woff2');
+  font-weight: 500;
+}
+
+body{
+  font-family: var(--font-family-Opensans);
+  font-size: var(--font-size-base);
+  color: var(--dark-purple);
+  background-color: var(--bg-light-pink);
+}
+.container{
+  flex-direction: column;
+  max-width: 725px;
+}
+h1, button, #message-el, #card-el, #sum-el, #player-el,
+#card-number, #games-won{
+  font-family: var(--font-family-PoetsenOne);
+}
+h1{
+  position: relative;  
+  font-size: var(--font-size-90px);
+  color: var(--light-purple);
+  font-weight: 500;
+}
+h1::before{  
+  content: "Cute Mini Blackjack Game";
+  position: absolute;
+  -webkit-text-stroke: 2rem var(--dark-purple);
+  z-index: -1;
+}
+#message-el{
+  font-size: var(--font-size-32px);
+  margin: 7rem auto 3rem;
+}
+
+#sum-el, #player-el, #games-won{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content:flex-start;
+  align-items: center;
+  font-size: var(--font-size-24px);
+}
+#card-el{
+  font-size: var(--font-size-24px);
+  align-items: left;
+}
+#card-number{
+  display: flex;
+  flex-direction: row;
+  font-size: var(--font-size-70px);
+}
+.cardgame__group{
+  flex-direction: column;
+  margin: 3rem 0 7rem;
+}
+.cardgame__group--card-adjustment{
+  flex-direction: column;
+  align-items: left;
+}
+.cardgame__group--seperate{
+  max-width: 650px;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+button{
+  padding: 1.5rem 7%;
+  font-size: var(--font-size-32px);
+  color: var(--dark-purple);
+  background-color: var(--regular-white);
+  border: 4px solid var(--dark-purple);
+  border-radius: 1rem;
+  box-shadow: 0px 10px 0px 0px var(--dark-purple);
+  cursor: pointer;
+}
+#new-card{
+  color: var(--dark-pink); 
+  margin-left: 8%;
+}
+button:hover{
+  color: var(--regular-white);
+  background-color: var(--dark-purple);
+  box-shadow: 0px 10px 0px 0px var(--light-purple);
+}
+.gameplay{
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 5rem;
+}
+.gameplay p{
+  margin-bottom: 2rem;
+}
+.card-style,
+.sum-style,
+.chip-style,
+.won-style{
+  position: relative;
+  display: flex;
+  font-size: var(--font-size-70px);
+  font-weight: 700;
+  color: var(--dark-pink);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px 30px;
+  margin-bottom: 5px;
+  /* -webkit-text-stroke: 2px var(--dark-pink); */
+}
+.cardgame__btngroup{
+  justify-content: flex-start;
+}
+.card-img{
+  max-width: 490px;
+}
+
+/** Main Content Styling */
+main{
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 10rem auto 15rem;
+  padding: 0 2rem;
+  align-items: center;
+}
