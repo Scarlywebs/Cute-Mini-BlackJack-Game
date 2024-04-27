@@ -15,12 +15,13 @@ startButton.onclick = startGame
 let newCardBTN = document.getElementById('new-card')
 newCardBTN.onclick = newCard
 let gamesTotal = document.getElementById('games-won')
+let gameWonSound = document.getElementById('win-sound')
 
 function getRandomCard(){
   let randomNumber = Math.floor( Math.random() * 13 ) + 1
   if ( randomNumber === 1){
     return 1
-  } else if ( randomNumber > 10){
+  } else if ( randomNumber >= 10){
     return 10
   } else{
     return randomNumber
@@ -39,6 +40,26 @@ function startGame() {
   }
 }
 
+function renderGame(){
+  if ( sum <= 18){
+    message = "Close, let's draw a new card!"
+  } else if ( sum === 21){
+    message = "You got Blackjack!"
+    hasBlackJack = true
+    isAlive = true
+    gamesWon += 1
+    gameWonSound.play();
+    getplayerChips();
+  } else {
+    message = "Oh no, you lost this round! Click 'New Game' to play again!"
+    hasBlackJack = false
+    isAlive = false    
+    getplayerChips();
+  } 
+  if (playerChips === 0){
+    message = "You out of chips!"
+  }
+
 function getplayerChips() {
   if (hasBlackJack === true) {
       playerChips += 15;
@@ -51,33 +72,18 @@ function getplayerChips() {
   }
 }
 
-function renderGame(){
-  if ( sum <= 18){
-    message = "Close, let's draw a new card!"
-  } else if ( sum === 21){
-    message = "You got Blackjack!"
-    hasBlackJack = true
-    isAlive = true
-    gamesWon += 1
-    getplayerChips();
-  } else {
-    message = "Oh no, you lost this round! Click 'New Game' to play again!"
-    hasBlackJack = false
-    isAlive = false    
-    getplayerChips();
-  } 
-  if (playerChips === 0){
-    message = "You out of chips!"
-  }
 
   messageEl.textContent = message
+  let cardNumDisplay = document.getElementById('card-number');
+  cardNumDisplay.textContent = "";
+  cardEl.textContent = "Cards Drawn";
 
-  for (let i = 0; i < cards.length; i++) {    
-    let cardNum = document.getElementById('card-number');
-    cardNum.textContent = cards[i] + "-";
-    cardNum.classList.add('card-style');
-    cardEl.textContent = "Cards Drawn";
-  }  
+  for (let i = 0; i < cards.length; i++) {
+    let cardDraw = document.createElement('p');
+    cardDraw.textContent = cards[i] + " " + "-";
+    cardDraw.classList.add('card-style');    
+    cardNumDisplay.appendChild(cardDraw);
+  } 
 
   let sumSpan = document.createElement('span');
   sumSpan.textContent = sum;
@@ -100,10 +106,11 @@ function renderGame(){
 
 function newCard(){
   if (isAlive && playerChips > 0){
-    let thirdCard = getRandomCard()
-    sum += thirdCard
-    cards.push(thirdCard)
+    let card = getRandomCard()
+    sum += card
+    cards.push(card)
     renderGame()
   } 
 }
+document.getElementById('bgsound').volume = 0.15;
 

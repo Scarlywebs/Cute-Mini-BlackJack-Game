@@ -14,7 +14,7 @@ body{
 }
 .container{
   flex-direction: column;
-  max-width: 725px;
+  max-width: 725px; 
 }
 h1, button, #message-el, #card-el, #sum-el, #player-el,
 #card-number, #games-won{
@@ -34,7 +34,7 @@ h1::before{
 }
 #message-el{
   font-size: var(--font-size-32px);
-  margin: 7rem auto 3rem;
+  margin: 7rem 0 2rem;   
 }
 
 #sum-el, #player-el, #games-won{
@@ -51,7 +51,10 @@ h1::before{
 #card-number{
   display: flex;
   flex-direction: row;
-  font-size: var(--font-size-70px);
+  background-color: #fff;
+  border-radius: 10px;
+  padding-left: 20px;
+  margin-bottom: 10px;
 }
 .cardgame__group{
   flex-direction: column;
@@ -98,16 +101,21 @@ button:hover{
 .sum-style,
 .chip-style,
 .won-style{
-  position: relative;
   display: flex;
   font-size: var(--font-size-70px);
   font-weight: 700;
-  color: var(--dark-pink);
+  color: var(--dark-pink);  
+}
+.card-style{
+  padding: 5px 10px;
+}
+.sum-style,
+.chip-style,
+.won-style{  
+  padding: 5px 30px;
   background-color: #fff;
   border-radius: 10px;
-  padding: 5px 30px;
   margin-bottom: 5px;
-  /* -webkit-text-stroke: 2px var(--dark-pink); */
 }
 .cardgame__btngroup{
   justify-content: flex-start;
@@ -124,4 +132,25 @@ main{
   margin: 10rem auto 15rem;
   padding: 0 2rem;
   align-items: center;
+}
+
+/* Style the audio player */
+#bgsound {
+  width: 300px;
+  height: 50px;
+  background-color: var(--dark-pink);
+  border-radius: 20rem;
+  padding: 10px;
+  margin-top: 5rem;
+}
+/* Style the playback controls */
+#bgsound::-webkit-media-controls-panel {
+  color: #fff;
+  background-color: var(--dark-pink);
+}
+.img-audio{
+  flex-direction: column;
+}
+.img-audio{
+  max-width: fit-content;
 }

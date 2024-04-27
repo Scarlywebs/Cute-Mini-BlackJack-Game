@@ -12,7 +12,9 @@
 		<main>
 			<section class="container">
 				<h1>Cute Mini Blackjack Game</h1>
-				<p id="message-el">Let's Play! Click Start Game</p>
+				<div id="message-container">
+					<span id="message-el" class="fade-out">Let's Play! Click Start Game</span>
+				</div>
 				<div class="cardgame__group">
 					<div class="cardgame__group--card-adjustment">
 						<p id="card-number"></p>
@@ -37,11 +39,19 @@
 				</div>
 				
 			</section>
-			<div class="card-img">
-				<img src="/imgs/cute-blackjack-card-and-chips.webp" alt="Cute blackjack card illustration with chips">
+			
+			<div class="img-audio">
+				<div class="card-img">
+					<img src="/imgs/cute-blackjack-card-and-chips.webp" alt="Cute blackjack card illustration with chips">
+				</div>
+				<audio id="bgsound" src="soundeffects/pixel-playground-color-parade.mp3" controls loop autoplay>
+					Your browser does not support the audio element.
+				</audio>
+				<audio id="win-sound" src="soundeffects/game-won-sound-effect.mp3">
+					Your browser does not support the audio element.
+				</audio>
 			</div>
 		</main>
     <script src="/js/cardgame.js"></script>
-		<!-- <script src="/js/learning.js"></script> -->
   </body>
 </html>
